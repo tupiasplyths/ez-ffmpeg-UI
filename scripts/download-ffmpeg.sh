@@ -37,7 +37,7 @@ download_ffmpeg_windows() {
     local zip_file="$tmpdir/ffmpeg-windows.zip"
 
     curl -L -o "$zip_file" "$WINDOWS_URL"
-    unzip -q "$zip_file" -d "$tmpdir"
+    tar -xf "$zip_file" -C "$tmpdir"
 
     local extracted_dir
     extracted_dir=$(find "$tmpdir" -maxdepth 1 -type d -name "ffmpeg-*" | head -1)
